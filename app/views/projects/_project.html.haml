@@ -1,0 +1,6 @@
+%tr{id: "#{dom_id(project)}", class: 'hover:bg-gray-100 border'}
+  %td.py-4.px-6.text-sm.font-medium.capitalize
+    = project.title
+  %td.py-4.px-6.text-sm.font-medium.text-right
+    = link_to 'editar', edit_project_path(project), class: 'bg-blue-300 border-blue-400  text-blue-900 border shadow rounded py-2 px-3'
+    = link_to 'remove', project_path(project), data: {turbo_method: :delete}, class: 'bg-red-300 text-red-900 border border-red-400 rounded shadow py-2 px-3'
