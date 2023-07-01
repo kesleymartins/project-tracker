@@ -87,6 +87,9 @@ GEM
       railties (>= 5.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    importmap-rails (1.2.1)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.6.0)
     irb (1.7.0)
       reline (>= 0.3.0)
@@ -164,6 +167,10 @@ GEM
     thor (1.2.2)
     tilt (2.2.0)
     timeout (0.4.0)
+    turbo-rails (1.4.0)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     websocket-driver (0.7.5)
@@ -177,11 +184,13 @@ PLATFORMS
 DEPENDENCIES
   debug
   haml-rails (~> 2.1)
+  importmap-rails (~> 1.2, >= 1.2.1)
   puma (~> 5.0)
   rails (~> 7.0.5)
   sprockets-rails
   sqlite3 (~> 1.4)
   tailwindcss-rails (~> 2.0, >= 2.0.29)
+  turbo-rails (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
