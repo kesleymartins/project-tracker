@@ -5,6 +5,9 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  def show
+  end
+
   def new
     @project = Project.new
   end
