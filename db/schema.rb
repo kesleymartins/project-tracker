@@ -20,17 +20,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_033049) do
   create_table "works", force: :cascade do |t|
     t.datetime "begin", null: false
     t.datetime "end", null: false
-    t.integer "projects_id"
-    t.integer "null_id"
-    t.integer "false_id"
+    t.integer "projects_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["false_id"], name: "index_works_on_false_id"
-    t.index ["null_id"], name: "index_works_on_null_id"
     t.index ["projects_id"], name: "index_works_on_projects_id"
   end
 
-  add_foreign_key "works", "falses"
-  add_foreign_key "works", "nulls"
   add_foreign_key "works", "projects", column: "projects_id"
 end
