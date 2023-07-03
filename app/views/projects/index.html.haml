@@ -1,19 +1,18 @@
-.my-2
-  .flex.justify-end.my-3
-    = link_to 'Novo Projeto', new_project_path, class: 'bg-blue-600 text-white border-none shadow hover:shadow-none rounded p-2'
+.flex.justify-end.mb-3
+  = link_to 'Novo Projeto', new_project_path, class: 'bg-blue-600 text-white border-none shadow hover:shadow-none rounded p-2'
 
-  - if @projects.any?
-    .border.shadow.rounded-lg
-      %table.min-w-full
-        %thead
-          %tr
-            %th.py-3.px-6.text-2xs.font-medium.italic.text-left.uppercase 
-              Title
-            %th
-        %tbody
-          - @projects.each do |project|
-            = render project
-  - else
-    %div.p-2.text-center.bg-gray-100.border.shadow.rounded.border-gray-400
-      %span
-        Nenhum projeto cadastrado.
+- if @projects.any?
+  .border.shadow.rounded-lg
+    %table.min-w-full
+      %thead
+        %tr
+          %th.py-3.px-6.text-2xs.font-medium.italic.text-left.uppercase 
+            Title
+          %th
+      %tbody
+        - @projects.each do |project|
+          = render project
+- else
+  %div.p-2.text-center.bg-gray-100.border.shadow.rounded.border-gray-400
+    %span
+      Nenhum projeto cadastrado.
