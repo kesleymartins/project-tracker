@@ -1,5 +1,9 @@
 .mb-3.py-4.px-10.border.shadow.rounded-lg
-  %h2.text-4xl.text-center.font-extralight.italic 
-    = @project.title
+  %div
+    %h2.text-4xl.text-center.font-extralight.italic 
+      = @project.title
   
   %hr.my-2/
+  
+  %div
+    = turbo_frame_tag :content, src: project_works_path(@project) 
