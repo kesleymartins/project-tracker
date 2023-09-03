@@ -1,0 +1,11 @@
+= turbo_frame_tag :content do 
+  %div
+    - @works.each do |work|
+      %p
+        = work.id
+  
+  %div
+    - if @works.any?
+      %p pagination
+    - else
+      %p any work yet.
