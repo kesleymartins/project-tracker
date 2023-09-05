@@ -12,8 +12,15 @@
     = stylesheet_link_tag "application"
     = javascript_importmap_tags
 
-  %body
-    %main{class: 'mx-auto w-8/12 py-3'}
-      %section.border.rounded.shadow.flex.justify-center.p-2.mb-4
-        = link_to 'projetos', projects_path, class: 'hover:underline capitalize italic text-xl font-light'
+  %body.bg-gray-800.flex 
+    %aside{class: 'w-3/12 h-screen text-gray-300 border-r border-gray-600 p-3'}
+      %section
+        %h2.text-2xl.text-center.font-semibold.mb-3
+          Project Tracker
+
+        %ul
+          %li
+            = link_to 'Projetos', projects_path, class: 'inline-block p-2 hover:bg-gray-700 rounded w-full'
+    
+    %main.h-screen.w-full.p-6
       = yield
