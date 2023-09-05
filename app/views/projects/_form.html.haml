@@ -1,17 +1,22 @@
 = form_with(model: [project]) do |f|
   - if project.errors.any?
-    %div.border.rounded-md.my-3
-      %h2.text-center.bg-red-300.p-2
+    .text-white.bg-gray-600.border.rounded.border-gray-500.p-2.mb-3
+      %h2.text-lg.text-center
         Alguns erros impediram o projeto de ser criado
-      
+
+      %hr.my-2
+
       %ul 
         - project.errors.each do |error|
-          %li.p-2.border-b
+          %li
             = error.full_message
 
-  %section.flex.justify-between.my-3
-    %div{class: "w-8/12"} 
-      = f.text_field :title, placeholder: 'Nome do projeto', class: 'w-full rounded-lg shadow border-gray-400 italic'
+  .text-white
+    %div.my-2
+      = f.label :title
+      = f.text_field :title, class: 'w-full block bg-gray-600 border rounded border-gray-500' 
 
-    %div.my-auto
-      = f.submit class: 'bg-green-200 hover:bg-green-300 border shadow rounded-xl border-green-300 hover:border-green-400 p-2 cursor-pointer hover:shadow-none'
+    %div.text-end.my-2
+      = f.submit class: 'border rounded bg-white text-gray-700 cursor-pointer p-2'
+
+
