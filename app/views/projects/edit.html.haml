@@ -1,7 +1,8 @@
-.mb-3.py-4.px-10.border.shadow.rounded-lg
-  %h2.text-4xl.text-center.font-extralight.italic 
-    Editar Projeto
+%section.flex.justify-between.items-center.bg-gray-700.border.rounded.border-gray-600.p-3.mb-3
+  %h2.text-white.text-2xl
+    Editar Projeto 
 
-  %hr.my-2/
+  = link_to 'Voltar', projects_path, class: 'inline-block text-white border rounded p-2 hover:bg-white hover:text-gray-700'
 
+%section.bg-gray-700.border.rounded.border-gray-600.p-3
   = render 'form', project: @project
