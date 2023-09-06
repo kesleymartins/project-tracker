@@ -1,18 +1,9 @@
-.flex.justify-end.mb-3
-  = link_to 'Novo Projeto', new_project_path, class: 'bg-blue-600 text-white border-none shadow hover:shadow-none rounded p-2'
+%section.flex.justify-between.items-center.bg-gray-700.border.rounded.border-gray-600.p-3.mb-3
+  %h2.text-xl.text-white
+    Projetos
 
-- if @projects.any?
-  .border.shadow.rounded-lg
-    %table.min-w-full
-      %thead
-        %tr
-          %th.py-3.px-6.text-2xs.font-medium.italic.text-left.uppercase 
-            Title
-          %th
-      %tbody
-        - @projects.each do |project|
-          = render project
-- else
-  %div.p-2.text-center.bg-gray-100.border.shadow.rounded.border-gray-400
-    %span
-      Nenhum projeto cadastrado.
+  = link_to 'Novo Projeto', new_project_path, class: 'inline-block border rounded bg-white p-2 text-gray-700 hover:text-white hover:bg-gray-700'
+
+%section.bg-gray-700.border.rounded.border-gray-600.p-3
+  - @projects.each do |project|
+    = render project
