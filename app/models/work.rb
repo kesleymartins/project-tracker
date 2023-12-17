@@ -9,6 +9,6 @@ class Work < ApplicationRecord
 
   def defaults
     self.begin = DateTime.now
-    self.started = 0
+    self.status = Work.statuses[:started]
   end
 end
