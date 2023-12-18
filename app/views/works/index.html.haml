@@ -1,8 +1,29 @@
 = turbo_frame_tag :content do 
   %div
     - @works.each do |work|
-      %p
-        = work.id
+      .p-2
+        .border.p-2
+          %span
+            Status:
+          %span
+            = work.status
+
+        .border.p-2
+          %span
+            Inicio:
+          %span
+            = work.begin.strftime('%d/%m/%Y %H:%M:%S')
+
+        .border.p-2
+          - if work.finished?
+            %span
+              Fim:
+            %span
+              = work.end.strftime('%d/%m/%Y %H:%M:%S')
+          - else
+            = form_with(model: [:finish, @project, work]) do |f|
+              = f.submit 'Finalizar', class: 'border rounded bg-white text-gray-700 cursor-pointer p-2 hover:bg-gray-700 hover:text-white'
+      %hr
   
   %div
     - if @works.any?
