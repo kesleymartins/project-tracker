@@ -2,5 +2,8 @@
   %h2.text-xl.text-center
     = @project.title
 
+  = form_with(model: [@project, Work.new]) do |f|
+    = f.submit 'Iniciar', class: 'border rounded bg-white text-gray-700 cursor-pointer p-2 hover:bg-gray-700 hover:text-white'
+
 %section.text-white.border.rounded.border-gray-600.bg-gray-700.p-3
   = turbo_frame_tag :content, src: project_works_path(@project)
