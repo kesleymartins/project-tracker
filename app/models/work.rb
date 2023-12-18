@@ -11,4 +11,9 @@ class Work < ApplicationRecord
     self.begin = DateTime.now
     self.status = Work.statuses[:started]
   end
+
+  def finish!
+    self.end = DateTime.now
+    self.status = Work.statuses[:finished]
+  end
 end
